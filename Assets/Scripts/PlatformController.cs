@@ -5,15 +5,15 @@ using UnityEngine;
 public class PlatformController : MonoBehaviour {
 
 
-	public float platformSpeed = -0.1f;
+	public float platformSpeed = -0.3f;
 	private Rigidbody2D platformBody;
 	private GameObject destructionPoint;
-	private GameMode gameMode;
+	//private GameMode gameMode;
 
 	// Use this for initialization
 	void Start () {
 		destructionPoint = GameObject.Find ("DestructionPoint");
-		platformSpeed = gameMode.GlobalScrollSpeed;
+		//platformSpeed = GameMode.GlobalScrollSpeed;
 		platformBody = GetComponent<Rigidbody2D> ();
 		platformBody.velocity = new Vector2 (platformSpeed, platformBody.velocity.y);
 	}

@@ -19,23 +19,23 @@ public class ObjectPooler : MonoBehaviour {
 			pooledObjects.Add (obj);
 		}
 
-		Debug.Log (pooledObjects.Count);
+		//Debug.Log (pooledObjects.Count);
 	}
 
 	// GET THE NEXT OBJECT FROM THE POOL
 	public GameObject GetPooledObject(){
 
 		//Debug.Log (pooledObjects.Count);
-
+		/*
 		for (int i = 0; i < pooledObjects.Count; i++) {
 			if (!pooledObjects [i].activeInHierarchy) {
 				return pooledObjects [i];
 			}
 		}
-
+*/
 		GameObject obj = (GameObject)Instantiate (pooledObject);
 		obj.SetActive(false);
-		pooledObjects.Add (obj);
+		//pooledObjects.Add (obj);
 		return obj;
 
 		return null;

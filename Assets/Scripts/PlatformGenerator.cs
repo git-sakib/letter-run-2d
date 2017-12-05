@@ -44,6 +44,7 @@ public class PlatformGenerator : MonoBehaviour {
 			newPlatform.SetActive(true);
 			newPlatform.transform.position = platformPosition;
 			newPlatform.transform.rotation = generationPoint.rotation;
+			Debug.Log (newPlatform.transform.position.x);
 
 			platformPosition = new Vector2 (platformPosition.x + platformWidth + distanceBetween, platformPosition.y);
 			//Debug.Log (platformPosition);

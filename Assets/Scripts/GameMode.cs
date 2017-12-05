@@ -7,7 +7,7 @@ public class GameMode : MonoBehaviour {
 	public static GameMode instance;
 	public float GlobalScrollSpeed = -1.5f;
 
-	public int GameTick = 0;
+	private int GameTick = 0;
 	public int GameLevel = 0;
 
 	// Use this for initialization
@@ -24,7 +24,9 @@ public class GameMode : MonoBehaviour {
 	}
 
 	void ManageTicks(){
+		GameTick++;
 		if (GameTick >= 500) {
+			GameTick = 0;
 			GameLevel++;
 		}
 	}
