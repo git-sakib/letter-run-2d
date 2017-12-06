@@ -16,4 +16,8 @@ public class BackgroundScroll : MonoBehaviour {
 		Vector2 offset = new Vector2 (Time.time * ScrollSpeed, 0);
 		GetComponent<Renderer> ().material.mainTextureOffset = offset;
 	}
+
+	void StopAll(){
+		ScrollSpeed = 0;
+	}
 }

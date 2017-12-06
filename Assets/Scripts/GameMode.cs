@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class GameMode : MonoBehaviour {
 
-	public static GameMode instance;
-	public float GlobalScrollSpeed = -1.5f;
+	//public static GameMode instance;
 
 	private int GameTick = 0;
 	public int GameLevel = 0;
 
 	// Use this for initialization
-	void Awake () {
-		if (instance == null) {
-			instance = this;
-		}
+	void Start () {
+		//if (instance == null) {
+			//instance = this;
+		//}
 	}
 	
 	// Update is called once per frame

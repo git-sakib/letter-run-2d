@@ -139,7 +139,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -333,7 +333,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &486949290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -372,6 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpSpeed: 7
+  doubleJumpSpeed: 4
   grounded: 0
   groundLayer:
     serializedVersion: 2
@@ -550,7 +551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1c916dd8b759747b8da5429664f8da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalScrollSpeed: -1.5
   GameLevel: 0
 --- !u!4 &1076463881
 Transform:
@@ -927,11 +927,11 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1959660453}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.99878293, g: 1, b: 0.97794116, a: 1}
-  m_Intensity: 0.33
+  m_Intensity: 0.42
   m_Range: 10.18
   m_SpotAngle: 1
   m_CookieSize: 10

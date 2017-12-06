@@ -7,13 +7,12 @@ public class ObstacleController : MonoBehaviour {
 	public float obstacleSpeed = -1f;
 	private Rigidbody2D obstacleBody;
 	private GameObject destructionPoint;
-	private GameMode gameMode;
 
 	// Use this for initialization
 	void Start () {
 		destructionPoint = GameObject.Find ("DestructionPoint");
 		obstacleBody = GetComponent<Rigidbody2D> ();
-		obstacleSpeed = gameMode.GlobalScrollSpeed;
+		obstacleSpeed = Global.GlobalScrollSpeed;
 		//obstacleBody.velocity = new Vector2 (obstacleSpeed, obstacleBody.velocity.y);
 	}
 

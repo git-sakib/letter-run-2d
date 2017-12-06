@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	public float moveSpeed = 2f;
-	public float jumpSpeed;
+	public float moveSpeed = 5f;
+	public float jumpSpeed = 7f;
+	public float doubleJumpSpeed = 4f;
 
 	public bool grounded;
 	public LayerMask groundLayer;
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour {
 
 	private bool isTorchOn = false;
 	private bool facingRight = true;
+	private bool canDoubleJump = false;
+	private bool isDoubleJumping = false;
 
 	// Use this for initialization
 	void Start () {
@@ -91,11 +94,19 @@ public class PlayerController : MonoBehaviour {
 
 	void PlayerAnim(){
 		if (grounded) {
-			playerAnimator.Play ("Run");
+			//playerAnimator.Play ("Run");
 			playerAnimator.SetInteger ("MoveStatus",2);
+			isDoubleJumping = false;
+			//Debug.Log ("On Ground");
 		} else {
-			playerAnimator.Play ("Idle");
-			playerAnimator.SetInteger ("MoveStatus",0);
+			//playerAnimator.Play ("Jump");
+			if (isDoubleJumping) {
+				playerAnimator.SetInteger ("MoveStatus", 4);
+				//Debug.Log ("Double Jumping");
+			} else {
+				playerAnimator.SetInteger ("MoveStatus", 3);
+				//Debug.Log ("Jumping");
+			}
 		}
 	}
 
@@ -105,6 +116,13 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (grounded) {
 				playerRigidBody2D.velocity = new Vector2 (0, jumpSpeed);
+				canDoubleJump = true;
+			} else {
+				if (canDoubleJump) {
+					playerRigidBody2D.velocity = new Vector2 (0, doubleJumpSpeed);
+					isDoubleJumping = true;
+					canDoubleJump = false;
+				}
 			}
 		}
 	}
