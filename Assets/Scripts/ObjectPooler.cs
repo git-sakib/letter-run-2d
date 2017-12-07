@@ -7,7 +7,7 @@ public class ObjectPooler : MonoBehaviour {
 	public GameObject pooledObject;
 	public int pooledAmount;
 
-	private List<GameObject> pooledObjects;
+	public List<GameObject> pooledObjects;
 
 	// Use this for initialization
 	void Start () {
@@ -25,17 +25,17 @@ public class ObjectPooler : MonoBehaviour {
 	// GET THE NEXT OBJECT FROM THE POOL
 	public GameObject GetPooledObject(){
 
-		//Debug.Log (pooledObjects.Count);
-		/*
+		Debug.Log (pooledObjects.Count);
+
 		for (int i = 0; i < pooledObjects.Count; i++) {
 			if (!pooledObjects [i].activeInHierarchy) {
 				return pooledObjects [i];
 			}
 		}
-*/
+
 		GameObject obj = (GameObject)Instantiate (pooledObject);
 		obj.SetActive(false);
-		//pooledObjects.Add (obj);
+		pooledObjects.Add (obj);
 		return obj;
 
 		return null;

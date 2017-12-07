@@ -32,6 +32,7 @@ public class PlatformGenerator : MonoBehaviour {
 
 	void GeneratePlatform(){
 
+
 		platformPosition = new Vector2(generationPoint.position.x, generationPoint.position.y);
 		platformWidth = platform.GetComponent<BoxCollider2D> ().size.x;
 
@@ -46,7 +47,7 @@ public class PlatformGenerator : MonoBehaviour {
 			newPlatform.transform.rotation = generationPoint.rotation;
 			Debug.Log (newPlatform.transform.position.x);
 
-			platformPosition = new Vector2 (platformPosition.x + platformWidth + distanceBetween, platformPosition.y);
+			platformPosition = new Vector2 (platformPosition.x + platformWidth + distanceBetween, platformPosition.y + 3);
 			//Debug.Log (platformPosition);
 		}
 	}

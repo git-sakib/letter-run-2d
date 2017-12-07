@@ -12,7 +12,7 @@ public class PlatformController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		destructionPoint = GameObject.Find ("DestructionPoint");
-		platformSpeed = Global.GlobalScrollSpeed;
+		//platformSpeed = Global.GlobalScrollSpeed;
 		platformBody = GetComponent<Rigidbody2D> ();
 		platformBody.velocity = new Vector2 (platformSpeed, platformBody.velocity.y);
 	}
